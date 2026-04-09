@@ -14,7 +14,6 @@
             display: flex;
         }
 
-        /* Sidebar */
         .sidebar {
             width: 220px;
             background-color: #111;
@@ -24,9 +23,7 @@
         }
 
         .sidebar h2 {
-            font-size: 18px;
             border-bottom: 1px solid white;
-            padding-bottom: 5px;
         }
 
         .sidebar a {
@@ -40,7 +37,6 @@
             color: white;
         }
 
-        /* Main Content */
         .content {
             flex: 1;
             padding: 30px;
@@ -48,12 +44,6 @@
 
         h1 {
             border-bottom: 2px solid white;
-            padding-bottom: 10px;
-        }
-
-        .warning {
-            color: red;
-            font-weight: bold;
         }
 
         .box {
@@ -62,12 +52,9 @@
             margin-top: 20px;
         }
 
-        footer {
-            margin-top: 40px;
-            border-top: 1px solid white;
-            padding-top: 10px;
-            font-size: 12px;
-            color: #888;
+        .warning {
+            color: red;
+            font-weight: bold;
         }
     </style>
 </head>
@@ -76,61 +63,39 @@
 
 <div class="container">
 
-    <!-- Sidebar -->
-    <div class="sidebar">
-        <h2>STAR CORP</h2>
+<div class="sidebar">
+    <h2>STAR CORP</h2>
+    <a href="index.html">Home</a>
+    <a href="a-1.html">A-1</a>
+    <a href="equinox.html">Star Site Equinox</a>
 
-        <a href="index.html">Home</a>
-        <a href="a-1.html">A-1</a>
-        <a href="#">Logs</a>
+    <h2>Database</h2>
+    <a href="tech.html">Technologies</a>
+    <a href="classes.html">Soldier Classes</a>
+</div>
 
-        <h2>Database</h2>
-        <a href="#">Anomalies</a>
-        <a href="#">Personnel</a>
-        <a href="#">Locations</a>
-    </div>
+<div class="content">
 
-    <!-- Main Content -->
-    <div class="content">
+<h1>STAR CORP SECURE DATABASE</h1>
+<p class="warning">⚠ UNAUTHORIZED ACCESS IS PROHIBITED ⚠</p>
 
-        <h1>STAR CORP SECURE DATABASE</h1>
+<div class="box">
+<h2>Overview</h2>
+<p>
+Starcorp is an advanced organization dedicated to the discovery,
+study, and control of anomalous entities, technologies, and alternate realities.
+</p>
+</div>
 
-        <p class="warning">⚠ UNAUTHORIZED ACCESS IS PROHIBITED ⚠</p>
+<div class="box">
+<h2>Available Files</h2>
+<ul>
+<li><a href="a-1.html">A-1 - "Herobrine"</a></li>
+<li><a href="equinox.html">Star Site Equinox</a></li>
+</ul>
+</div>
 
-        <div class="box">
-            <h2>Welcome</h2>
-            <p>
-                Welcome to the STAR CORP anomaly database.
-                This system contains classified records of anomalous entities,
-                objects, and phenomena currently under observation or containment.
-            </p>
-        </div>
-
-        <div class="box">
-            <h2>Available Files</h2>
-            <ul>
-                <li><a href="a-1.html">A-1 - "Herobrine"</a></li>
-            </ul>
-        </div>
-
-        <div class="box">
-            <h2>Notice</h2>
-            <p>
-                All personnel must adhere to containment procedures at all times.
-                Failure to comply will result in disciplinary action.
-            </p>
-        </div>
-
-        <footer>
-            <p>
-                Original STAR CORP Database System<br>
-                (Inspired by collaborative anomaly archives)<br><br>
-                Licensed under Creative Commons Attribution-ShareAlike 3.0
-            </p>
-        </footer>
-
-    </div>
-
+</div>
 </div>
 
 </body>
