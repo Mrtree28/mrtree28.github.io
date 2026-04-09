@@ -14,8 +14,9 @@
             display: flex;
         }
 
+        /* Sidebar */
         .sidebar {
-            width: 220px;
+            width: 240px;
             background-color: #111;
             height: 100vh;
             padding: 15px;
@@ -24,6 +25,7 @@
 
         .sidebar h2 {
             border-bottom: 1px solid white;
+            padding-bottom: 5px;
         }
 
         .sidebar a {
@@ -37,6 +39,7 @@
             color: white;
         }
 
+        /* Main Content */
         .content {
             flex: 1;
             padding: 30px;
@@ -44,6 +47,12 @@
 
         h1 {
             border-bottom: 2px solid white;
+            padding-bottom: 10px;
+        }
+
+        .warning {
+            color: red;
+            font-weight: bold;
         }
 
         .box {
@@ -52,9 +61,12 @@
             margin-top: 20px;
         }
 
-        .warning {
-            color: red;
-            font-weight: bold;
+        footer {
+            margin-top: 40px;
+            border-top: 1px solid white;
+            padding-top: 10px;
+            font-size: 12px;
+            color: #777;
         }
     </style>
 </head>
@@ -63,40 +75,65 @@
 
 <div class="container">
 
-<div class="sidebar">
-    <h2>STAR CORP</h2>
-    <a href="index.html">Home</a>
-    <a href="a-1.html">A-1</a>
-    <a href="equinox.html">Star Site Equinox</a>
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <h2>STAR CORP</h2>
 
-    <h2>Database</h2>
-    <a href="tech.html">Technologies</a>
-    <a href="classes.html">Soldier Classes</a>
-</div>
+        <a href="index.html">Home</a>
 
-<div class="content">
+        <h2>Entities</h2>
+        <a href="entities/a/a.html">A-Class</a>
+        <a href="entities/b/b.html">B-Class</a>
 
-<h1>STAR CORP SECURE DATABASE</h1>
-<p class="warning">⚠ UNAUTHORIZED ACCESS IS PROHIBITED ⚠</p>
+        <h2>Sites</h2>
+        <a href="sites/a.html">Site Index (A-Z)</a>
+        <a href="sites/equinox.html">Star Site Equinox</a>
 
-<div class="box">
-<h2>Overview</h2>
-<p>
-Starcorp is an advanced organization dedicated to the discovery,
-study, and control of anomalous entities, technologies, and alternate realities.
-</p>
-</div>
+        <h2>Other</h2>
+        <a href="tech.html">Technologies</a>
+        <a href="classes.html">Soldier Classes</a>
+        <a href="submit.html">Submit Report</a>
+    </div>
 
-<div class="box">
-<h2>Available Files</h2>
-<ul>
-<li><a href="a-1.html">A-1 - "Herobrine"</a></li>
-<li><a href="equinox.html">Star Site Equinox</a></li>
-<li><a href="b-1.html">B-1 - The Hooded Death</a></li>
-</ul>
-</div>
+    <!-- Main Content -->
+    <div class="content">
 
-</div>
+        <h1>STAR CORP SECURE DATABASE</h1>
+
+        <p class="warning">⚠ UNAUTHORIZED ACCESS IS PROHIBITED ⚠</p>
+
+        <div class="box">
+            <h2>Overview</h2>
+            <p>
+                Starcorp is an advanced organization dedicated to the discovery,
+                study, and control of anomalous entities, technologies, and alternate realities.
+            </p>
+        </div>
+
+        <div class="box">
+            <h2>Quick Access</h2>
+            <ul>
+                <li><a href="entities/a/a-1.html">A-1 - "Herobrine"</a></li>
+                <li><a href="entities/b/b-1.html">B-1 - The Hooded Death</a></li>
+                <li><a href="sites/equinox.html">Star Site Equinox</a></li>
+            </ul>
+        </div>
+
+        <div class="box">
+            <h2>Database Structure</h2>
+            <p>
+                Entities are categorized alphabetically (A-Z).
+                Site records are organized separately and indexed by designation.
+                Personnel are encouraged to submit new findings through the report system.
+            </p>
+        </div>
+
+        <footer>
+            STAR CORP DATABASE — INTERNAL USE ONLY
+        </footer>
+
+    </div>
+
 </div>
 
 </body>
