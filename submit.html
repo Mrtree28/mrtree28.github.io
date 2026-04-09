@@ -28,7 +28,7 @@
             border: 1px solid white;
             padding: 20px;
             margin-top: 20px;
-            max-width: 600px;
+            max-width: 700px;
         }
 
         label {
@@ -52,7 +52,7 @@
 
         button {
             margin-top: 20px;
-            padding: 10px;
+            padding: 12px;
             width: 100%;
             background-color: black;
             color: white;
@@ -69,12 +69,6 @@
             font-weight: bold;
             margin-top: 15px;
         }
-
-        .success {
-            color: lime;
-            display: none;
-            margin-top: 15px;
-        }
     </style>
 </head>
 
@@ -86,28 +80,29 @@
 
 <div class="box">
 
-<p>Submit a new entity or site record for internal review.</p>
+<p>Submit a new entity, site, or report for internal review.</p>
 
-<form id="submitForm">
+<form id="form">
 
     <label>Type:</label>
-    <select>
+    <select id="type">
         <option>Entity</option>
         <option>Site</option>
         <option>Technology</option>
+        <option>Story</option>
     </select>
 
     <label>Designation:</label>
-    <input type="text" placeholder="e.g. C-3 or Site Delta">
+    <input type="text" id="designation" placeholder="e.g. C-3 or Site Delta">
 
     <label>Title:</label>
-    <input type="text" placeholder="Name of entity or site">
+    <input type="text" id="title" placeholder="Name of entry">
 
     <label>Description:</label>
-    <textarea rows="6" placeholder="Enter full report..."></textarea>
+    <textarea rows="6" id="description" placeholder="Enter full report..."></textarea>
 
     <label>Threat Level:</label>
-    <select>
+    <select id="threat">
         <option>Low</option>
         <option>Moderate</option>
         <option>High</option>
@@ -119,19 +114,43 @@
 </form>
 
 <p class="warning">
-⚠ WARNING: Unauthorized or false submissions may result in disciplinary action.
-</p>
-
-<p class="success" id="successMsg">
-✔ Submission received. Awaiting review...
+⚠ Submissions will be sent to the STAR CORP review system.
 </p>
 
 </div>
 
 <script>
-document.getElementById("submitForm").addEventListener("submit", function(e) {
+document.getElementById("form").addEventListener("submit", function(e) {
     e.preventDefault();
-    document.getElementById("successMsg").style.display = "block";
+
+    let type = document.getElementById("type").value;
+    let designation = document.getElementById("designation").value;
+    let title = document.getElementById("title").value;
+    let description = document.getElementById("description").value;
+    let threat = document.getElementById("threat").value;
+
+    let issueTitle = encodeURIComponent(`[${type}] ${designation} - ${title}`);
+
+    let issueBody = encodeURIComponent(
+`---  
+Type: ${type}  
+
+Designation: ${designation}  
+
+Title: ${title}  
+
+Threat Level: ${threat}  
+
+Description:
+${description}
+
+---  
+Submitted via STAR CORP Database`
+    );
+
+    let url = `https://github.com/Mrtree28/mrtree28.github.io/issues/new?title=${issueTitle}&body=${issueBody}`;
+
+    window.open(url, "_blank");
 });
 </script>
 
