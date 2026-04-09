@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Submit Report - STAR CORP</title>
+    <style>
+        body {
+            background-color: #000;
+            color: #e0e0e0;
+            font-family: Courier New, monospace;
+            margin: 40px;
+        }
+
+        h1 {
+            border-bottom: 2px solid white;
+            padding-bottom: 10px;
+        }
+
+        a {
+            color: #aaa;
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: white;
+        }
+
+        .box {
+            border: 1px solid white;
+            padding: 20px;
+            margin-top: 20px;
+            max-width: 600px;
+        }
+
+        label {
+            display: block;
+            margin-top: 15px;
+        }
+
+        input, textarea, select {
+            width: 100%;
+            margin-top: 5px;
+            padding: 8px;
+            background-color: #111;
+            color: white;
+            border: 1px solid white;
+            font-family: Courier New, monospace;
+        }
+
+        textarea {
+            resize: vertical;
+        }
+
+        button {
+            margin-top: 20px;
+            padding: 10px;
+            width: 100%;
+            background-color: black;
+            color: white;
+            border: 1px solid white;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #111;
+        }
+
+        .warning {
+            color: red;
+            font-weight: bold;
+            margin-top: 15px;
+        }
+
+        .success {
+            color: lime;
+            display: none;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+
+<body>
+
+<a href="index.html">← Back to Database</a>
+
+<h1>STAR CORP SUBMISSION TERMINAL</h1>
+
+<div class="box">
+
+<p>Submit a new entity or site record for internal review.</p>
+
+<form id="submitForm">
+
+    <label>Type:</label>
+    <select>
+        <option>Entity</option>
+        <option>Site</option>
+        <option>Technology</option>
+    </select>
+
+    <label>Designation:</label>
+    <input type="text" placeholder="e.g. C-3 or Site Delta">
+
+    <label>Title:</label>
+    <input type="text" placeholder="Name of entity or site">
+
+    <label>Description:</label>
+    <textarea rows="6" placeholder="Enter full report..."></textarea>
+
+    <label>Threat Level:</label>
+    <select>
+        <option>Low</option>
+        <option>Moderate</option>
+        <option>High</option>
+        <option>Extreme</option>
+    </select>
+
+    <button type="submit">SUBMIT REPORT</button>
+
+</form>
+
+<p class="warning">
+⚠ WARNING: Unauthorized or false submissions may result in disciplinary action.
+</p>
+
+<p class="success" id="successMsg">
+✔ Submission received. Awaiting review...
+</p>
+
+</div>
+
+<script>
+document.getElementById("submitForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+    document.getElementById("successMsg").style.display = "block";
+});
+</script>
+
+</body>
+</html>
